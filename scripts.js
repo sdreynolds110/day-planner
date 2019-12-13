@@ -9,3 +9,15 @@ var d = new Date(),
     days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
 return days[d.getDay()]+' '+months[d.getMonth()]+' '+d.getDate()+' '+d.getFullYear()+' '+hours+':'+minutes+ampm;
 }
+
+var contentList = document.querySelector("#content");
+contentList.addEventListener("click", function(event) {
+    event.preventDefault();
+  var input = document.querySelector("#input").value;
+
+  if (input === "") {
+    displayMessage("error", "Input cannot be blank");
+
+    localStorage.setItem("input", input);
+  }
+});
